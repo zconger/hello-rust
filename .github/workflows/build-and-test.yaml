@@ -18,4 +18,10 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+      - name: Install Rust toolchain
+        uses: actions-rs/toolchain@v1
+      - name: Build it
+        run: rustc src/main.rs
+      - name: Run it
+        run: ./main
       - run: echo "🍏 This job's status is ${{ job.status }}."
