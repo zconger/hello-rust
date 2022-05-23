@@ -20,6 +20,9 @@ jobs:
           ls ${{ github.workspace }}
       - name: Install Rust toolchain
         uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal # or default
+          toolchain: stable
       - name: Build it
         run: rustc src/main.rs
       - name: Run it
